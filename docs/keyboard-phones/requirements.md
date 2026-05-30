@@ -99,4 +99,4 @@ Other keyboard phones: add rows as hardware becomes available; do not block Q25-
 ## Git identity (fork commits)
 
 - `user.name`: `shahzebqazi`
-- `user.email`: `code@sqazi.sh`
+- `user.email`: `16868330+shahzebqazi@users.noreply.github.com` (GitHub blocks private `code@sqazi.sh` on push)

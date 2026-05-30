@@ -1,13 +1,25 @@
 # Keyboard phones — test plan
 
 Build: `./gradlew assembleUnstableDebug`  
-Install: `adb install -r java/build/outputs/apk/unstable/debug/*.apk` (path may vary; confirm after build)
+Install: `adb install -r build/outputs/apk/unstable/debug/*-unstable-debug.apk` (confirm path after build)
+
+## Screenshots (required after install + each scenario)
+
+Captured with `docs/keyboard-phones/capture-screenshot.sh <label>` into `docs/keyboard-phones/screenshots/`. Commit PNGs on `dev` with test-plan updates.
+
+| Label | File | Scenario |
+|-------|------|----------|
+| `00-after-install` | | APK installed, FUTO set as default IME |
+| `01-soft-keyboard` | | S1 — soft keyboard on Q25 |
+| `02-physical-keyboard` | | S2 — built-in keys |
+| `03-suggestion-strip` | | S4 — strip with soft keys hidden |
+| _(add as tested)_ | | |
 
 ## Device matrix
 
 | Device | Model (`getprop ro.product.model`) | Android | Keyboard type | Date | Tester |
 |--------|-----------------------------------|---------|---------------|------|--------|
-| Zinwa Q25 | _pending_ | _pending_ | Built-in | — | shahzebqazi |
+| Zinwa Q25 | _pending adb authorize_ | _pending_ | Built-in | 2026-05-30 | shahzebqazi |
 
 Record when connected:
 
@@ -35,7 +47,7 @@ adb shell getprop ro.build.version.release
 
 | Command | Result | Date |
 |---------|--------|------|
-| `./gradlew assembleUnstableDebug` | _not run_ | |
+| `./gradlew assembleUnstableDebug` | **PASS** — `build/outputs/apk/unstable/debug/android-keyboard-unstable-debug.apk` | 2026-05-30 |
 | `./gradlew test` | _not run_ | |
 
 ## User approval (upstream gate)
